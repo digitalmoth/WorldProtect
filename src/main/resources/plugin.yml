@@ -1,0 +1,10 @@
+name: WorldProtect
+main: io.github.digitalmoth.WorldProtect
+version: 1.0
+author: digitalmoth
+permissions:
+  worldprotect.modify:
+     default: false
+     description: Grants access to modify worlds that are noticed in config
+depend:
+  - Multiverse-Core
