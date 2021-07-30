@@ -1,2 +1,34 @@
+permissionmsg: "Вы не можете модифицировать данный мир"
+blocked-command-message: "Вы не можете использовать данную команду в этом мире"
+blocked-commands:
+  - //set
+  - //replace
+  - //overlay
+  - //walls
+  - //outline
+  - //faces
+  - //smooth
+  - //deform
+  - //hollow
+  - //cut
+  - /gobrush
+  - /gb
+  - /gopaint
+  - /gp
+  - //cyl
+  - //hcyl
+  - //pyramid
+  - //hpyramid
+  - //sphere
+  - //hsphere
+  - //up
+  - /up
+  - //paste
+  - //drain
+  - /setblock
+  - /fill
+  - /execute
+  - /sudo
+  - //setbiome
 worlds:
   - some

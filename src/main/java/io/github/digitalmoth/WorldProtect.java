@@ -1,9 +1,10 @@
 package io.github.digitalmoth;
 
+import io.github.digitalmoth.listeners.DayAndWeatherCycleHandler;
 import io.github.digitalmoth.listeners.WorldModifyHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import io.github.digitalmoth.listeners.WorldModifyByPluginsHandler;
+import io.github.digitalmoth.listeners.WorldModifyByCommandsHandler;
 
 import java.util.List;
 
@@ -16,30 +17,12 @@ public class WorldProtect extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
         registerEvents();
-
-        disableDayCycle();
-        disableWeatherCycle();
-
 //        WorldEditModifyHandler.registerWorldEditEvent();
     }
 
-
-
     private void registerEvents() {
         Bukkit.getPluginManager().registerEvents(new WorldModifyHandler(this), this);
-        Bukkit.getPluginManager().registerEvents(new WorldModifyByPluginsHandler(this), this);
-
+        Bukkit.getPluginManager().registerEvents(new WorldModifyByCommandsHandler(this), this);
+        Bukkit.getPluginManager().registerEvents(new DayAndWeatherCycleHandler(this), this);
     }
-
-    private void disableWeatherCycle() {
-        for (var world : worlds) {
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "mvgamerule doWeatherCycle false " + world);
-        }
     }
-
-    private void disableDayCycle() {
-        for (var world : worlds) {
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "mvgamerule doDaylightCycle false " + world);
-        }
-    }
-}

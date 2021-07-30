@@ -6,5 +6,6 @@ permissions:
   worldprotect.modify:
      default: false
      description: Grants access to modify worlds that are noticed in config
-depend:
-  - Multiverse-Core
+  worldprotect.commands:
+     default: false
+     description: Grants access to execute commands that are noticed in config
